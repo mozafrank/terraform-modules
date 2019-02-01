@@ -4,7 +4,7 @@ locals {
   state_bucket = "${var.state_bucket == "" ? "deploy-state-${data.aws_caller_identity.current.account_id}" : var.state_bucket}"
 }
 
-data "terrafrom_remote_state" "deployment" {
+data "terrafrom_remote_state" "info" {
   backend = "${var.backend}"
 
   config = {
