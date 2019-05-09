@@ -6,7 +6,7 @@ Very handy if you are using lifecycled
 ```
 module "asg_lifecycle" {
 	name			= "MyASGHook"
-	asg_names		= [ "myasg-1" ]
+	worker_asg		= [ "myasg-1" ]
 	worker_iam_role = "myworker-role-name" 
 }
 ```

@@ -1,7 +1,7 @@
 resource "aws_autoscaling_lifecycle_hook" "lifecycle_hook" {
   count                   = "${length(var.worker_asg)}"
   name                    = "${var.name}-termination-hook-${count.index}"
-  autoscaling_group_name  = "${element(var.asg_names, count.index)}"
+  autoscaling_group_name  = "${element(var.worker_asg, count.index)}"
   default_result          = "CONTINUE"
   heartbeat_timeout       = "60"
   lifecycle_transition    = "autoscaling:EC2_INSTANCE_TERMINATING"
