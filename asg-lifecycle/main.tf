@@ -1,5 +1,5 @@
 resource "aws_autoscaling_lifecycle_hook" "lifecycle_hook" {
-  count                   = "${length(var.asg_names)}"
+  count                   = "${length(var.worker_asg)}"
   name                    = "${var.name}-termination-hook-${count.index}"
   autoscaling_group_name  = "${element(var.asg_names, count.index)}"
   default_result          = "CONTINUE"

@@ -8,7 +8,7 @@ variable "lifecycled_log_group" {
   default = "/aws/lifecycled"
 }
 
-variable "asg_names" {
+variable "worker_asg" {
   type = "list"
 }
 
