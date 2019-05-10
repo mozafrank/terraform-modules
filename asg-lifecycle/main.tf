@@ -117,7 +117,7 @@ resource "aws_iam_role" "lifecycle_hook" {
 }
 
 resource "aws_iam_role_policy" "lifecycle_hook" {
-  name   = "${local.cluster_name}-lifecycle-asg-permissions"
+  name   = "${var.name}-lifecycle-asg-permissions"
   role   = "${aws_iam_role.lifecycle_hook.id}"
   policy = "${data.aws_iam_policy_document.asg_permissions.json}"
 }
