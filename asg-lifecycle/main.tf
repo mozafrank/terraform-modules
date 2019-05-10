@@ -116,6 +116,12 @@ resource "aws_iam_role" "lifecycle_hook" {
   assume_role_policy = "${data.aws_iam_policy_document.asg_assume.json}"
 }
 
+resource "aws_iam_role_policy" "lifecycle_hook" {
+  name   = "${local.cluster_name}-lifecycle-asg-permissions"
+  role   = "${aws_iam_role.lifecycle_hook.id}"
+  policy = "${data.aws_iam_policy_document.asg_permissions.json}"
+}
+
 resource "aws_iam_role_policy" "worker_permission" {
   name   = "${var.name}-lifecycle-worker-permissions"
   role   = "${var.worker_iam_role}"
