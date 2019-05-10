@@ -12,4 +12,6 @@ variable "worker_asg" {
   type = "list"
 }
 
+variable "worker_asg_count" {}
+
 variable "worker_iam_role" {}
