@@ -2,16 +2,20 @@ variable "region" {
   default = "us-west-2"
 }
 
-variable "name" {}
+variable "name" {
+}
 
 variable "lifecycled_log_group" {
   default = "/aws/lifecycled"
 }
 
 variable "worker_asg" {
-  type = "list"
+  type = list(string)
 }
 
-variable "worker_asg_count" {}
+variable "worker_asg_count" {
+}
 
-variable "worker_iam_role" {}
+variable "worker_iam_role" {
+}
+

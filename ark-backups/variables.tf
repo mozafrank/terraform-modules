@@ -1,6 +1,8 @@
-variable "region" {}
+variable "region" {
+}
 
-variable "cluster_name" {}
+variable "cluster_name" {
+}
 
 variable "bucket_name" {
   default = "ark"
@@ -9,3 +11,4 @@ variable "bucket_name" {
 variable "backup_user" {
   default = "heptio-ark"
 }
+
